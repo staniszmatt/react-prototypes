@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/app';
+
 let user = {
    name: "Matt",
    luckyNumber: luckyNumber()
 }
 ReactDOM.render(
-   greeting(user), 
+   <App/>, 
    document.getElementById('root')
 );
 
