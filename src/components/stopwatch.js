@@ -47,13 +47,16 @@ class Stopwatch extends Component{
       const {status, elapsed} = this.state;
 
       return(
-         <div>
-            <h1>
+         <div className="jumbotron">
+            <h1 className="display-3">
+            <hr className="my-3"/>
                <FormatTime elapsed={elapsed} />
-               <p>{status}</p>
-               <button onClick={this.start}>Start</button>
-               <button onClick={this.stop}>Stop</button>
-               <button onClick={this.reset}>Reset</button>
+               <p className="lead text-center">{status}</p>
+               <p className="lead text-center">
+                  <button className="btn btn-outline-success mx-3" onClick={this.start}>Start</button>
+                  <button className="btn btn-outline-danger mx-3" onClick={this.stop}>Stop</button>
+                  <button className="btn btn-outline-warning mx-3" onClick={this.reset}>Reset</button>
+               </p>
             </h1>
          </div>
       );

@@ -2,7 +2,14 @@ import React, {Component} from 'react';
 
 class FormatTime extends Component{
    constructor(props){
-      super(props)
+      super(props);
+      this.timerStyle = {
+         display: 'inline-block',
+         position: 'relative',
+         left: '50%',
+         transform: 'translate(-50%)',
+         width: '295px'
+      };
    }
    millisecondsToTime(){
       const {elapsed} = this.props;
@@ -21,7 +28,7 @@ class FormatTime extends Component{
       const {hour, min, sec, ms} = timeDisplay;
       console.log("fromat time props ", this.props)
       return (
-         <div>{hour}:{min}:{sec}:{ms}</div>
+         <div style={this.timerStyle}>{hour}:{min}:{sec}:{ms}</div>
       )
    }  
 }
