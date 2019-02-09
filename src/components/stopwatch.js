@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-
+import React, {Component} from 'react';
+import FormatTime from '../components/format_time';
 class Stopwatch extends Component{
    constructor(props){
       super(props);
@@ -49,7 +49,7 @@ class Stopwatch extends Component{
       return(
          <div>
             <h1>
-               {elapsed}
+               <FormatTime elapsed={elapsed} />
                <p>{status}</p>
                <button onClick={this.start}>Start</button>
                <button onClick={this.stop}>Stop</button>
