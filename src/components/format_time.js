@@ -8,7 +8,7 @@ class FormatTime extends Component{
          position: 'relative',
          left: '50%',
          transform: 'translate(-50%)',
-         width: '295px'
+         width: '383px'
       };
    }
    millisecondsToTime(){
@@ -23,12 +23,17 @@ class FormatTime extends Component{
          ms: Math.floor(elapsed%100)
       }
    }
+   leadingZero(numberCheck){
+      return numberCheck < 10 ? `0${numberCheck}` : numberCheck;
+   }
+   trailingZeros(numberCheck){
+      return numberCheck < 10 ? `${numberCheck}0` : numberCheck;
+   }
    render(){
       const timeDisplay = this.millisecondsToTime();
-      const {hour, min, sec, ms} = timeDisplay;
-      console.log("fromat time props ", this.props)
+      let {hour, min, sec, ms} = timeDisplay;
       return (
-         <div style={this.timerStyle}>{hour}:{min}:{sec}:{ms}</div>
+         <div style={this.timerStyle}>{this.leadingZero(hour)}:{this.leadingZero(min)}:{this.leadingZero(sec)}:{this.trailingZeros(ms)  }</div>
       )
    }  
 }
