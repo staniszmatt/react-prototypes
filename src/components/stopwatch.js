@@ -23,6 +23,7 @@ class Stopwatch extends Component{
       }
    }
    start(){
+      let 
       this.setState({
          status: "running",
          start: new Date().getTime()
