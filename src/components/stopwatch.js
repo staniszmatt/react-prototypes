@@ -23,10 +23,14 @@ class Stopwatch extends Component{
       }
    }
    start(){
-      let 
+      const {start, elapsed} = this.state;
+      let newStart = new Date().getTime();
+      if (start){
+         newStart -= elapsed;
+      }  
       this.setState({
          status: "running",
-         start: new Date().getTime()
+         start: newStart
       });
       setTimeout(this.update, 10);
    }
