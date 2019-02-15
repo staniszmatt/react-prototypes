@@ -13,6 +13,14 @@ export default (props) => {
          <li className="nav-item">
             <Link to="/our_macarons" className="nav-link" >Macarons!</Link>
          </li>
+         <li className="nav-item">
+            <Link to="/contact" className="nav-link" >Contact Me!</Link>
+         </li>
+
+         <li className="nav-item">
+            <Link to="/gifts_parties" className="nav-link" >Gift and Parties!</Link>
+         </li>
+
       </ul>
    )
 }
